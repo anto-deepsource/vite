@@ -99,8 +99,8 @@ export default function vuePlugin(rawOptions: Options = {}): Plugin {
     reactivityTransform === false
       ? () => false
       : reactivityTransform === true
-      ? createFilter(/\.(j|t)sx?$/, /node_modules/)
-      : createFilter(reactivityTransform)
+        ? createFilter(/\.(j|t)sx?$/, /node_modules/)
+        : createFilter(reactivityTransform)
 
   let options: ResolvedOptions = {
     isProduction: process.env.NODE_ENV === 'production',
