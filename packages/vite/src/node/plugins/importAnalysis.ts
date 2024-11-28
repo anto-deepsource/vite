@@ -200,12 +200,12 @@ export function importAnalysisPlugin(config: ResolvedConfig): Plugin {
         const msg = isVue
           ? `Install @vitejs/plugin-vue to handle .vue files.`
           : maybeJSX
-          ? `If you are using JSX, make sure to name the file with the .jsx or .tsx extension.`
-          : `You may need to install appropriate plugins to handle the ${path.extname(
-              importer
-            )} file format, or if it's an asset, add "**/*${path.extname(
-              importer
-            )}" to \`assetsInclude\` in your configuration.`
+            ? `If you are using JSX, make sure to name the file with the .jsx or .tsx extension.`
+            : `You may need to install appropriate plugins to handle the ${path.extname(
+                importer
+              )} file format, or if it's an asset, add "**/*${path.extname(
+                importer
+              )}" to \`assetsInclude\` in your configuration.`
 
         this.error(
           `Failed to parse source for import analysis because the content ` +
@@ -615,10 +615,10 @@ export function importAnalysisPlugin(config: ResolvedConfig): Plugin {
             isSelfAccepting
               ? `[self-accepts]`
               : isPartiallySelfAccepting
-              ? `[accepts-exports]`
-              : acceptedUrls.size
-              ? `[accepts-deps]`
-              : `[detected api usage]`
+                ? `[accepts-exports]`
+                : acceptedUrls.size
+                  ? `[accepts-deps]`
+                  : `[detected api usage]`
           } ${prettyImporter}`
         )
         // inject hot context
