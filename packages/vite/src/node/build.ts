@@ -372,8 +372,8 @@ async function doBuild(
   const input = libOptions
     ? resolve(libOptions.entry)
     : typeof options.ssr === 'string'
-    ? resolve(options.ssr)
-    : options.rollupOptions?.input || resolve('index.html')
+      ? resolve(options.ssr)
+      : options.rollupOptions?.input || resolve('index.html')
 
   if (ssr && typeof input === 'string' && input.endsWith('.html')) {
     throw new Error(
@@ -408,8 +408,8 @@ async function doBuild(
     preserveEntrySignatures: ssr
       ? 'allow-extension'
       : libOptions
-      ? 'strict'
-      : false,
+        ? 'strict'
+        : false,
     ...options.rollupOptions,
     input,
     plugins,
@@ -465,8 +465,8 @@ async function doBuild(
         entryFileNames: ssr
           ? `[name].${jsExt}`
           : libOptions
-          ? resolveLibFilename(libOptions, format, config.root, jsExt)
-          : path.posix.join(options.assetsDir, `[name].[hash].${jsExt}`),
+            ? resolveLibFilename(libOptions, format, config.root, jsExt)
+            : path.posix.join(options.assetsDir, `[name].[hash].${jsExt}`),
         chunkFileNames: libOptions
           ? `[name].[hash].${jsExt}`
           : path.posix.join(options.assetsDir, `[name].[hash].${jsExt}`),
