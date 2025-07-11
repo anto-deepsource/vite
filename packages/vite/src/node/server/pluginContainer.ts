@@ -365,9 +365,9 @@ export async function createPluginContainer(
         position != null
           ? position
           : err.pos != null
-          ? err.pos
-          : // some rollup plugins, e.g. json, sets position instead of pos
-            (err as any).position
+            ? err.pos
+            : // some rollup plugins, e.g. json, sets position instead of pos
+              (err as any).position
 
       if (pos != null) {
         let errLocation

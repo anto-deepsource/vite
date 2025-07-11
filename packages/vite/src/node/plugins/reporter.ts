@@ -187,8 +187,8 @@ export function buildReporterPlugin(config: ResolvedConfig): Plugin {
                 isCSS
                   ? WriteType.CSS
                   : isMap
-                  ? WriteType.SOURCE_MAP
-                  : WriteType.ASSET,
+                    ? WriteType.SOURCE_MAP
+                    : WriteType.ASSET,
                 longest,
                 isCSS ? await getCompressedSize(chunk.source) : undefined
               )
