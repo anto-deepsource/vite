@@ -273,8 +273,8 @@ export const buildEsbuildPlugin = (config: ResolvedConfig): Plugin => {
           opts.format === 'umd'
             ? INJECT_HELPERS_UMD_RE
             : opts.format === 'iife'
-            ? INJECT_HELPERS_IIFE_RE
-            : undefined
+              ? INJECT_HELPERS_IIFE_RE
+              : undefined
         if (injectHelpers) {
           res.code = res.code.replace(
             injectHelpers,
